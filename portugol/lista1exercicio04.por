@@ -14,8 +14,9 @@ programa
 		escreva("Digite o terceiro valor: ")
 		leia(c)
 
-		r = mat.raiz((a + b), 2)
-		s = mat.raiz((b + c), 2)
+		r = mat.potencia((a + b), 2)
+		s = mat.potencia((b + c), 2)
+
 
 		d = (r + s) / 2
 
@@ -29,7 +30,7 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 299; 
+ * @POSICAO-CURSOR = 304; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
