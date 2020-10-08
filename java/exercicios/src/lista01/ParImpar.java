@@ -1,4 +1,4 @@
-package portugol;
+package lista01;
 import java.util.Scanner;
 public class ParImpar {
 	public static void main(String[] args) {

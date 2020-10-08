@@ -1,4 +1,4 @@
-package portugol;
+package lista02;
 
 import java.util.Scanner;
 
