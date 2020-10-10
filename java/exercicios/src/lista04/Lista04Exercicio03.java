@@ -1,30 +1,39 @@
+//Leia uma matriz 3 x 3, conte e escreva quantos valores maiores que 10 ela possui.
+
 package lista04;
 
-import java.util.Scanner;
+import java.util.Random;
 
 public class Lista04Exercicio03 {
 
-public static void main(String[] args) {
-
-Scanner leia = new Scanner (System.in);
+	public static void main(String[] args) {
 		
-		int matriz [][] = new int [3][3];
-		int contador = 0;
+		Random random = new Random();
+		int valores, maiorQueDez = 0;
 		
-		for (int l =0; l < 3;l++) {
-			
-			for (int c = 0; c<3;c++) {
-				System.out.printf("Digite um numero inteiro positivo para linha %d e coluna %d  :",l+1,c+1);
-				matriz[l][c] = leia.nextInt();
-				if (matriz[l][c]>10) contador++;
+		int matriz[][] = new int[3][3];
+		
+		for(int linha = 0 ; linha < 3 ; linha++)
+		{
+			for(int coluna = 0; coluna < 3 ; coluna++)
+			{
+				valores = random.nextInt(20);
+				
+				if(valores > 10)
+				{
+					maiorQueDez++;
+				}
+				
+				matriz[linha][coluna] = valores;
+				
+				System.out.print("[" + matriz[linha][coluna] + "]");
 			}
+			
+			System.out.println();
 		}
 		
-		System.out.println();
-		System.out.println("O total de numeros maior que 10 é :"+contador);
-		
-		
-		
+		System.out.println("Quantidade de valores maiores que dez: " + maiorQueDez);
+
 	}
 
 }
