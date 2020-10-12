@@ -222,7 +222,7 @@ public class CarrinhoDeCompras {
 						if (quantidadeProdutoCarrinho < quantidadeCarrinho[codigoProdutoComprar]) {
 							diferencaAlteracao = quantidadeCarrinho[codigoProdutoComprar] - quantidadeProdutoCarrinho;
 							//subtotal subtrai o que o usuário retirou do que já existia 
-							subtotal = subtotal - (diferencaAlteracao * preco[codigoProdutoComprar]);
+							subtotal = subtotal - (diferencaAlteracao * precos[codigoProdutoComprar]);
 							quantidadeCarrinho[codigoProdutoComprar] = quantidadeProdutoCarrinho;
 							quantidade[codigoProdutoComprar] += diferencaAlteracao;
 						//SE VAI ALTERAR PARA MAIS	
