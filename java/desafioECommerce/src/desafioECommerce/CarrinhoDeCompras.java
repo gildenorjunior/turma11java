@@ -49,7 +49,7 @@ public class CarrinhoDeCompras {
 		System.out.println();
 		
 		System.out.print("Bem vindes " + nome + ", deseja ver nosso catalogo de fantasias [S/N]: \n");
-		perguntaInicial = leia.next().toUpperCase().charAt(0);
+		contador = leia.next().toUpperCase().charAt(0);
 		
 		//NÃO PRECISA DESSE IF POIS JÁ TEM O WHILE VALIDANDO A CONDIÇÃO DE ENTRADA
 		//if (perguntaInicial == 'S') {
