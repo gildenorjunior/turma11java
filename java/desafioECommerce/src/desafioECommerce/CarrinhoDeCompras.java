@@ -230,7 +230,7 @@ public class CarrinhoDeCompras {
 							if (quantidadeProdutoCarrinho <= quantidade[codigoProdutoComprar]) {
 								diferencaAlteracao = quantidadeProdutoCarrinho - quantidadeCarrinho[codigoProdutoComprar];
 								//subtotal soma  o que já existia com o que o usuário colocou a mais
-								subtotal = subtotal + (diferencaAlteracao * preco[codigoProdutoComprar]);
+								subtotal = subtotal + (diferencaAlteracao * precos[codigoProdutoComprar]);
 								quantidadeCarrinho[codigoProdutoComprar] = quantidadeProdutoCarrinho;
 								quantidade[codigoProdutoComprar] -= diferencaAlteracao;
 								quantidadeCarrinho[codigoProdutoComprar] = quantidadeProdutoCarrinho;
@@ -393,10 +393,10 @@ public class CarrinhoDeCompras {
 				System.out.println("2ª Parcela de " + valorParcelado + " para " + formatador.format(parcela2));
 				System.out.println("3ª Parcela de " + valorParcelado + " para " + formatador.format(parcela3));
 			}
-		}
 		}else {
 			System.out.println("Obrigado por acessar nosso sistema, volte sempre que precisar!");
 		}
 		leia.close();
 	}
+}
 }
