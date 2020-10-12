@@ -298,8 +298,9 @@ public class CarrinhoDeCompras {
 				if (contador == 'N') {
 					System.out.println("Obrigado por acessar nosso sistema, volte sempre que precisar!");
 					System.exit(0);
-				}
+					}
 
+				}
 			}
 		} // fecha while
 
