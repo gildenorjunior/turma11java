@@ -51,102 +51,148 @@ public class CarrinhoDeCompras {
 		System.out.print("Bem vindes " + nome + ", deseja ver nosso catalogo de fantasias [S/N]: \n");
 		perguntaInicial = leia.next().toUpperCase().charAt(0);
 		
-		if (perguntaInicial == 'S') {
-		while (contador == 'S') {
-			System.out.println(
-					"══════════════════════════ PRODUTOS LOJAS ABRACADABRA ═════════════════════════\n");
-			System.out.print("CÓD ═══════════ QTDE ════════════ PRODUTO ═══════════════════════════════ PREÇO\n");
-
-			
-			
-			for (int x = 0; x < produtos.length; x++) {
+		//NÃO PRECISA DESSE IF POIS JÁ TEM O WHILE VALIDANDO A CONDIÇÃO DE ENTRADA
+		//if (perguntaInicial == 'S') {
+			while (contador == 'S') {
 				System.out.println(
-						x + "        ║     \t " + quantidade[x] + "\t║     " + produtos[x] + "          \t\t║  " + precos[x]);
-			}
-			
-			
-			System.out.println("═══════════════════════════════════════════════════════════════════════════════");
-			System.out.println();
-			System.out.print(
-					"Escolha uma das opções que deseja:\n\n[1]- Inserir produtos ao carrinho \n[2]- Remover algum produto \n[3]- Alterar a quantidade do produto \n[4]- Visualizar carrinho \n[5]- Efetuar o Pagamento \n\nDigite a opção escolhida: ");
-			funcao = leia.nextInt();
-			
-			switch (funcao) {
-			case 1: {
-				// Inserir produto
-				System.out.printf("Prezades %s, digite o código do produto que deseja inserir no seu carrinho:", nome);
-				codigoProdutoComprar = leia.nextInt();
+						"â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•� PRODUTOS LOJAS ABRACADABRA â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�\n");
+				System.out.print("CÃ“D â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•� QTDE â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•� PRODUTO â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•� PREÃ‡O\n");
+	
 				
-				//CASO DIGITE VALOR INVALIDO
-				while (codigoProdutoComprar < 0 || codigoProdutoComprar > 9) {
-					System.out.print("Código de produto inválido você tem " + contadorTentativas + " tentativas, por favor digite um código válido: ");
-					codigoProdutoComprar = leia.nextInt();
-					contadorTentativas--;
-					if (contadorTentativas == 0) {
-						System.out.println("\nSuas tentativas acabaram, logue-se novamente!");
-						System.exit(0);
-					} 
+				
+				for (int x = 0; x < produtos.length; x++) {
+					System.out.println(
+							x + "        â•‘     \t " + quantidade[x] + "\tâ•‘     " + produtos[x] + "          \t\tâ•‘  " + precos[x]);
 				}
 				
-				/*A CONDICAO ELSE ABAIXO JÁ ESTA FAZENDO
-				 * if (quantidade[codigoProdutoComprar] < 0) {
-					System.out.println("Sinto muito o produto está esgotado!");
-				} else {*/ 
 				
-					System.out.printf("O produto que você selecionou é a %s, por favor informe a quantidade: ",
-							produtos[codigoProdutoComprar]);
-					quantidadeProdutoCarrinho = leia.nextInt();
+				System.out.println("â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�");
+				System.out.println();
+				System.out.print(
+						"Escolha uma das opÃ§Ãµes que deseja:\n\n[1]- Inserir produtos ao carrinho \n[2]- Remover algum produto \n[3]- Alterar a quantidade do produto \n[4]- Visualizar carrinho \n[5]- Efetuar o Pagamento \n\nDigite a opÃ§Ã£o escolhida: ");
+				funcao = leia.nextInt();
+				
+				switch (funcao) {
+				case 1: {
+					// Inserir produto
+					System.out.printf("Prezades %s, digite o cÃ³digo do produto que deseja inserir no seu carrinho:", nome);
+					codigoProdutoComprar = leia.nextInt();
 					
-					//CONDIÇÃO DE CONTINUA A VER PRODUTOS OU ENCERRA E EFETUA PAGAMENTO 
-					System.out.println();
-					System.out.print("Escolha uma das opções:\n[S] para continuar a ver produtos e menu\n[N] para efetuar o pagamento\n\nDigite a opção escolhida: ");
-					contador = leia.next().toUpperCase().charAt(0);
-					System.out.println();
-					if (contador == 'N') {
+	
+					
+					/*A CONDICAO ELSE ABAIXO JÃ� ESTA FAZENDO
+					 * if (quantidade[codigoProdutoComprar] < 0) {
+						System.out.println("Sinto muito o produto estÃ¡ esgotado!");
+					} else {*/ 
+					
+						System.out.printf("O produto que vocÃª selecionou Ã© a %s, por favor informe a quantidade: ",
+								produtos[codigoProdutoComprar]);
+						quantidadeProdutoCarrinho = leia.nextInt();
+						
+	
+						if (quantidadeProdutoCarrinho <= quantidade[codigoProdutoComprar] & quantidadeProdutoCarrinho > 0) {
+							quantidade[codigoProdutoComprar] -= quantidadeProdutoCarrinho;
+							produtosCarrinho[codigoProdutoComprar] = produtos[codigoProdutoComprar];
+							quantidadeCarrinho[codigoProdutoComprar] = quantidadeProdutoCarrinho;
+							valorCarrinho[codigoProdutoComprar] = precos[codigoProdutoComprar];
+							codigoCarrinho[codigoProdutoComprar] = codigoProdutoComprar;
+							subtotal += precos[codigoProdutoComprar] * quantidadeProdutoCarrinho; // aqui
+							totalItensCarrinho++;
+						} else {
+							System.out.printf("\nEstÃ¡ quantidade nÃ£o estÃ¡ disponÃ­vel! SÃ³ hÃ¡ %d itens deste produto \n",
+									quantidade[codigoProdutoComprar]);
+							
+							//CASO NÃƒO TENHA A QUANTIDADE ESCOLHIDA ELE VOLTA A PEDIR A QUANTIDADE POR CERTO NÃšMERO DE TENTATIVAS
+							while (quantidadeProdutoCarrinho > quantidade[codigoProdutoComprar] | quantidadeProdutoCarrinho < 0) {
+								System.out.print("Quantidade de produtos invÃ¡lida, vocÃª tem " + contadorTentativas + " tentativas, por favor digite um nÃºmero de quantidades vÃ¡lido: ");
+								quantidadeProdutoCarrinho = leia.nextInt();
+								contadorTentativas--;
+								if (contadorTentativas == 0) {
+									System.out.println("\nSuas tentativas acabaram, logue-se novamente!");
+									System.exit(0);
+								} 
+							}
+						}
+						
+						//CONDIÃ‡ÃƒO DE CONTINUA A VER PRODUTOS OU ENCERRA E EFETUA PAGAMENTO 
+						System.out.println();
+						System.out.print("Escolha uma das opÃ§Ãµes:\n[S] para continuar a ver produtos e menu\n[N] para efetuar o pagamento\n\nDigite a opÃ§Ã£o escolhida: ");
+						contador = leia.next().toUpperCase().charAt(0);
+						System.out.println();
+						
+						/*if (contador == 'N') {
+							break;
+						}NÃO PRECISA DESSE IF , PORQUE A CONDIÇÃO DO WHILE PARA RODAR DE NOVO É O CONTADOR SER IGUAL A s
+						*/
+						
+						
 						break;
 					}
-
-					if (quantidadeProdutoCarrinho <= quantidade[codigoProdutoComprar] & quantidadeProdutoCarrinho > 0) {
-						quantidade[codigoProdutoComprar] -= quantidadeProdutoCarrinho;
-						produtosCarrinho[codigoProdutoComprar] = produtos[codigoProdutoComprar];
-						quantidadeCarrinho[codigoProdutoComprar] = quantidadeProdutoCarrinho;
-						valorCarrinho[codigoProdutoComprar] = precos[codigoProdutoComprar];
-						codigoCarrinho[codigoProdutoComprar] = codigoProdutoComprar;
-						subtotal += precos[codigoProdutoComprar] * quantidadeProdutoCarrinho; // aqui
-						totalItensCarrinho++;
-					} else {
-						System.out.printf("\nEstá quantidade não está disponível! Só há %d itens deste produto \n",
-								quantidade[codigoProdutoComprar]);
+					/*NAO ESTAVA TENDO FUNÃ‡ÃƒO NO CODIGO
+					 * while (contador != 'S' && contador != 'N') {
+						System.out.println("\nDVocÃª deseja continuar S-sim ou N-nao");
+						contador = leia.next().toUpperCase().charAt(0);
+					}
+					break;
+				}*/
+				case 2: {
+					// Remover produto
+					if (totalItensCarrinho > 0) {
+						System.out.printf("Prezades %s, digite o cÃ³digo do produto que deseja excluir do seu carrinho:", nome);
+						codigoProdutoComprar = leia.nextInt();
 						
-						//CASO NÃO TENHA A QUANTIDADE ESCOLHIDA ELE VOLTA A PEDIR A QUANTIDADE POR CERTO NÚMERO DE TENTATIVAS
-						while (quantidadeProdutoCarrinho > quantidade[codigoProdutoComprar] | quantidadeProdutoCarrinho < 0) {
-							System.out.print("Quantidade de produtos inválida, você tem " + contadorTentativas + " tentativas, por favor digite um número de quantidades válido: ");
-							quantidadeProdutoCarrinho = leia.nextInt();
+						//CASO DIGITE VALOR INVALIDO
+						while (codigoProdutoComprar < 0 || codigoProdutoComprar > 9) {
+							System.out.print("CÃ³digo de produto invÃ¡lido vocÃª tem " + contadorTentativas + " tentativas, por favor digite um cÃ³digo vÃ¡lido: ");
+							codigoProdutoComprar = leia.nextInt();
 							contadorTentativas--;
 							if (contadorTentativas == 0) {
 								System.out.println("\nSuas tentativas acabaram, logue-se novamente!");
+								contadorTentativas = 3;
 								System.exit(0);
 							} 
 						}
+						
+						System.out.print("Quantos itens desse produto vocÃª deseja excluir: ");
+						int tempExcluir = leia.nextInt();
+						
+						//CASO DIGITE VALOR INVALIDO
+						while (tempExcluir > quantidadeProdutoCarrinho || tempExcluir < 0) {
+							System.out.print("Quantidade de produto invÃ¡lida vocÃª tem " + contadorTentativas + " tentativas, por favor digite uma quantidade vÃ¡lida: ");
+							tempExcluir = leia.nextInt();
+							contadorTentativas--;
+							if (contadorTentativas == 0) {
+								System.out.println("\nSuas tentativas acabaram, logue-se novamente!");
+								contadorTentativas = 3;
+								System.exit(0);
+							} 
+						}
+						
+						produtosCarrinho[codigoProdutoComprar] = " ";
+						quantidade[codigoProdutoComprar] =  quantidade[codigoProdutoComprar] + tempExcluir;
+						quantidadeCarrinho[codigoProdutoComprar] = (quantidadeCarrinho[codigoProdutoComprar] - tempExcluir);
+						subtotal = subtotal - (precos[codigoProdutoComprar] * quantidadeProdutoCarrinho);
+						quantidadeCarrinho[codigoProdutoComprar] = 0; //AQUI É PARA ZERAR A QUANTIDADE DO PRODUTO, O USUÁRIO DECIDIU EXCLUIR TODAS AS UNIDADES DAQUELE PRODUTO
+						
+						//CONDIÃ‡ÃƒO DE CONTINUAR A VER PRODUTOS OU ENCERRA E EFETUA PAGAMENTO
+						System.out.println();
+						System.out.print("Escolha uma das opÃ§Ãµes:\n[S] para continuar a ver produtos e menu\n[N] para efetuar o pagamento\n\nDigite a opÃ§Ã£o escolhida: ");
+						contador = leia.next().toUpperCase().charAt(0);
+						System.out.println();
+					
+	
+					} else {
+						System.out.println("NÃ£o hÃ¡ itens ainda no seu carrinho!\n");
 					}
 					break;
 				}
-				/*NAO ESTAVA TENDO FUNÇÃO NO CODIGO
-				 * while (contador != 'S' && contador != 'N') {
-					System.out.println("\nDVocê deseja continuar S-sim ou N-nao");
-					contador = leia.next().toUpperCase().charAt(0);
-				}
-				break;
-			}*/
-			case 2: {
-				// Remover produto
-				if (totalItensCarrinho > 0) {
-					System.out.printf("Prezades %s, digite o código do produto que deseja excluir do seu carrinho:", nome);
+				case 3: { //ALTERAR PRODUTO
+					System.out.printf("\nPrezades %s, digite o cÃ³digo do produto que deseja alterar do seu carrinho:", nome);
 					codigoProdutoComprar = leia.nextInt();
 					
 					//CASO DIGITE VALOR INVALIDO
 					while (codigoProdutoComprar < 0 || codigoProdutoComprar > 9) {
-						System.out.print("Código de produto inválido você tem " + contadorTentativas + " tentativas, por favor digite um código válido: ");
+						System.out.print("CÃ³digo de produto invÃ¡lido vocÃª tem " + contadorTentativas + " tentativas, por favor digite um cÃ³digo vÃ¡lido: ");
 						codigoProdutoComprar = leia.nextInt();
 						contadorTentativas--;
 						if (contadorTentativas == 0) {
@@ -156,153 +202,103 @@ public class CarrinhoDeCompras {
 						} 
 					}
 					
-					System.out.print("Quantos itens desse produto você deseja excluir: ");
-					int tempExcluir = leia.nextInt();
-					
-					//CASO DIGITE VALOR INVALIDO
-					while (tempExcluir > quantidadeProdutoCarrinho | tempExcluir < 0) {
-						System.out.print("Quantidade de produto inválida você tem " + contadorTentativas + " tentativas, por favor digite uma quantidade válida: ");
-						tempExcluir = leia.nextInt();
-						contadorTentativas--;
-						if (contadorTentativas == 0) {
-							System.out.println("\nSuas tentativas acabaram, logue-se novamente!");
-							contadorTentativas = 3;
-							System.exit(0);
-						} 
-					}
-					
-					//produtosCarrinho[codigoProdutoComprar] = null; Não entendi
-					quantidade[codigoProdutoComprar] =  quantidade[codigoProdutoComprar] + tempExcluir;
-					quantidadeCarrinho[codigoProdutoComprar] = (quantidadeCarrinho[codigoProdutoComprar] - tempExcluir);
-					subtotal = 0;
-					subtotal = precos[codigoProdutoComprar] * quantidadeProdutoCarrinho;
-					//quantidadeCarrinho[codigoProdutoComprar] = 0; Não entendi
-					
-					//CONDIÇÃO DE CONTINUAR A VER PRODUTOS OU ENCERRA E EFETUA PAGAMENTO
-					System.out.println();
-					System.out.print("Escolha uma das opções:\n[S] para continuar a ver produtos e menu\n[N] para efetuar o pagamento\n\nDigite a opção escolhida: ");
-					contador = leia.next().toUpperCase().charAt(0);
-					System.out.println();
-					if (contador == 'N') {
-						break;
-					}
-
-				} else {
-					System.out.println("Não há itens ainda no seu carrinho!\n");
-				}
-				break;
-			}
-			case 3: { //ALTERAR PRODUTO
-				System.out.printf("\nPrezades %s, digite o código do produto que deseja alterar do seu carrinho:", nome);
-				codigoProdutoComprar = leia.nextInt();
-				
-				//CASO DIGITE VALOR INVALIDO
-				while (codigoProdutoComprar < 0 || codigoProdutoComprar > 9) {
-					System.out.print("Código de produto inválido você tem " + contadorTentativas + " tentativas, por favor digite um código válido: ");
-					codigoProdutoComprar = leia.nextInt();
-					contadorTentativas--;
-					if (contadorTentativas == 0) {
-						System.out.println("\nSuas tentativas acabaram, logue-se novamente!");
-						contadorTentativas = 3;
-						System.exit(0);
-					} 
-				}
-				
-				if (quantidadeCarrinho[codigoProdutoComprar] > 0) {
-					System.out.printf("O produto que você selecionou é %s, por favor informe a nova quantidade: ",
-							produtos[codigoProdutoComprar]);
-					quantidadeProdutoCarrinho = leia.nextInt();
-					
-					//CASO DIGITE VALOR INVALIDO
-					while (quantidadeProdutoCarrinho < 0 || quantidadeProdutoCarrinho > 9) {
-						System.out.print("Quantidade de produto inválida você tem " + contadorTentativas + " tentativas, por favor digite uma quantidade válida: ");
+					if (quantidadeCarrinho[codigoProdutoComprar] > 0) {
+						System.out.printf("O produto que vocÃª selecionou Ã© %s, por favor informe a nova quantidade: ",
+								produtos[codigoProdutoComprar]);
 						quantidadeProdutoCarrinho = leia.nextInt();
-						contadorTentativas--;
-						if (contadorTentativas == 0) {
-							System.out.println("\nSuas tentativas acabaram, logue-se novamente!");
-							contadorTentativas = 3;
-							System.exit(0);
-						} 
-					}
-					
-					if (quantidadeProdutoCarrinho < quantidadeCarrinho[codigoProdutoComprar]) {
-						diferencaAlteracao = quantidadeCarrinho[codigoProdutoComprar] - quantidade[codigoProdutoComprar];
-						quantidadeCarrinho[codigoProdutoComprar] = quantidadeProdutoCarrinho;
-						quantidade[codigoProdutoComprar] += diferencaAlteracao;
 						
-					} else if (quantidadeProdutoCarrinho > quantidadeCarrinho[codigoProdutoComprar]) {
-						if (quantidadeProdutoCarrinho <= quantidade[codigoProdutoComprar]) {
-							diferencaAlteracao = quantidadeProdutoCarrinho - quantidadeCarrinho[codigoProdutoComprar];
+						//CASO DIGITE VALOR INVALIDO
+						while (quantidadeProdutoCarrinho < 0 || quantidadeProdutoCarrinho > 9) {
+							System.out.print("Quantidade de produto invÃ¡lida vocÃª tem " + contadorTentativas + " tentativas, por favor digite uma quantidade vÃ¡lida: ");
+							quantidadeProdutoCarrinho = leia.nextInt();
+							contadorTentativas--;
+							if (contadorTentativas == 0) {
+								System.out.println("\nSuas tentativas acabaram, logue-se novamente!");
+								contadorTentativas = 3;
+								System.exit(0);
+							} 
+						}
+						//SE VAI ALTERAR PARA MENOS
+						if (quantidadeProdutoCarrinho < quantidadeCarrinho[codigoProdutoComprar]) {
+							diferencaAlteracao = quantidadeCarrinho[codigoProdutoComprar] - quantidadeProdutoCarrinho;
+							//subtotal subtrai o que o usuário retirou do que já existia 
+							subtotal = subtotal - (diferencaAlteracao * preco[codigoProdutoComprar]);
 							quantidadeCarrinho[codigoProdutoComprar] = quantidadeProdutoCarrinho;
-							quantidade[codigoProdutoComprar] -= diferencaAlteracao;
-							quantidadeCarrinho[codigoProdutoComprar] = quantidadeProdutoCarrinho;
-						} else {
-							System.out.println("Essa quantidade não está disponível no estoque\n");
+							quantidade[codigoProdutoComprar] += diferencaAlteracao;
+						//SE VAI ALTERAR PARA MAIS	
+						} else if (quantidadeProdutoCarrinho > quantidadeCarrinho[codigoProdutoComprar]) {
+							if (quantidadeProdutoCarrinho <= quantidade[codigoProdutoComprar]) {
+								diferencaAlteracao = quantidadeProdutoCarrinho - quantidadeCarrinho[codigoProdutoComprar];
+								//subtotal soma  o que já existia com o que o usuário colocou a mais
+								subtotal = subtotal + (diferencaAlteracao * preco[codigoProdutoComprar]);
+								quantidadeCarrinho[codigoProdutoComprar] = quantidadeProdutoCarrinho;
+								quantidade[codigoProdutoComprar] -= diferencaAlteracao;
+								quantidadeCarrinho[codigoProdutoComprar] = quantidadeProdutoCarrinho;
+							} else {
+								System.out.println("Essa quantidade nÃ£o estÃ¡ disponÃ­vel no estoque\n");
+							}
+						}
+	
+					} else {
+						System.out.println("\nSeu carrinho nÃ£o contÃ©m este produto!\n");// O PRODUTO QUE O USUÁRIO QUER ALTERAR NÃO EXISTE NO CARRINHO ELE PRECISA INSERIR PARA PODER ALTERAR
+						System.out.print("Escolha uma das opÃ§Ãµes:\n[S] para continuar a ver produtos e menu\n[N] para finalizar o programa\n\nDigite a opÃ§Ã£o escolhida: ");
+						contador = leia.next().toUpperCase().charAt(0);
+						System.out.println();
+						
+					}
+					break;
+				}
+				case 4: {
+					System.out.println(
+							"â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•� PRODUTOS LOJAS ABRACADABRA â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�\n");
+					System.out.print("CÃ“D â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•� QTDE â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•� PRODUTO â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•� PREÃ‡O\n");
+	
+					
+					
+					for (int x = 0; x < produtosCarrinho.length; x++) {
+						if (quantidadeCarrinho[x] > 0) {
+							System.out.println(
+									x + "        â•‘     \t " + quantidadeCarrinho[x] + "\tâ•‘     " + produtosCarrinho[x] + "          \t\tâ•‘  " + valorCarrinho[x]);
 						}
 					}
+					
+					
+					System.out.println("â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�â•�");
+					System.out.println();
+					
+					//CONDIÃ‡ÃƒO DE CONTINUAR A VER PRODUTOS OU ENCERRA E EFETUA PAGAMENTO
+					System.out.println();
+					System.out.print("Escolha uma das opÃ§Ãµes:\n[S] para continuar a ver produtos e menu\n[N] para efetuar o pagamento\n\nDigite a opÃ§Ã£o escolhida: ");
+					contador = leia.next().toUpperCase().charAt(0);
+					System.out.println();
+					System.out.println();
 
-				} else {
-					System.out.println("\nSeu carrinho não contém este produto!\n");
-					System.out.print("Escolha uma das opções:\n[S] para continuar a ver produtos e menu\n[N] para finalizar o programa\n\nDigite a opção escolhida: ");
+	
+					break;
+				}
+				case 5: {
+	
+					contador = 'N';
+					
+						System.out.println("Obrigado por acessar nosso sistema, volte sempre que precisar!");
+						//System.exit(0); NAO ENTENDI ESSA PARTE
+					
+	
+					break;
+				}
+				default:
+					System.out.println("OpÃ§Ã£o invÃ¡lida!");
+					System.out.println();
+					System.out.print("Escolha uma das opÃ§Ãµes:\n[S] para continuar a ver produtos e menu\n[N] para finalizar o programa\n\nDigite a opÃ§Ã£o escolhida: ");
 					contador = leia.next().toUpperCase().charAt(0);
 					System.out.println();
 					if (contador == 'N') {
 						System.out.println("Obrigado por acessar nosso sistema, volte sempre que precisar!");
-						System.exit(0);
+						System.exit(0);//NAO ENTENDI ESSE
 					}
-				}
-				break;
-			}
-			case 4: {
-				System.out.println(
-						"══════════════════════════ PRODUTOS LOJAS ABRACADABRA ═════════════════════════\n");
-				System.out.print("CÓD ═══════════ QTDE ════════════ PRODUTO ═══════════════════════════════ PREÇO\n");
-
-				
-				
-				for (int x = 0; x < produtosCarrinho.length; x++) {
-					if (quantidadeCarrinho[x] > 0) {
-						System.out.println(
-								x + "        ║     \t " + quantidadeCarrinho[x] + "\t║     " + produtosCarrinho[x] + "          \t\t║  " + valorCarrinho[x]);
-					}
-				}
-				
-				
-				System.out.println("═══════════════════════════════════════════════════════════════════════════════");
-				System.out.println();
-				
-				//CONDIÇÃO DE CONTINUAR A VER PRODUTOS OU ENCERRA E EFETUA PAGAMENTO
-				System.out.println();
-				System.out.print("Escolha uma das opções:\n[S] para continuar a ver produtos e menu\n[N] para efetuar o pagamento\n\nDigite a opção escolhida: ");
-				contador = leia.next().toUpperCase().charAt(0);
-				System.out.println();
-				System.out.println();
-				if (contador == 'N') {
-					break;
-				}
-
-				break;
-			}
-			case 5: {
-
-				contador = 'N';
-
-				break;
-			}
-			default:
-				System.out.println("Opção inválida!");
-				System.out.println();
-				System.out.print("Escolha uma das opções:\n[S] para continuar a ver produtos e menu\n[N] para finalizar o programa\n\nDigite a opção escolhida: ");
-				contador = leia.next().toUpperCase().charAt(0);
-				System.out.println();
-				if (contador == 'N') {
-					System.out.println("Obrigado por acessar nosso sistema, volte sempre que precisar!");
-					System.exit(0);
-				}
-
-			}
-		} // fecha while
-
+	
+			} // fecha while
+	
 		// pagamento da compra efetuada
 		System.out.println(
 				"══════════════════════════ PRODUTOS MEU CARRINHO ═════════════════════════\n");
