@@ -40,26 +40,27 @@ public abstract class ContaBancaria {
 		}
 
 		// método de Saque
-		public boolean debite(double valorDebito) {
+		public double debite(double valorDebito) {
 
 			if (this.saldo > 0 && valorDebito <= this.saldo) {
 				if(((saldo - valorDebito) >= 0)) {
 					this.saldo= (this.getSaldo() - valorDebito);
-					return true;
 				}
-			} 
-			return false;
+			}
+			return getSaldo();
 		}
 
-		// método de Depósito
+		// método de Crédito
 		void credite(double valorCredito) {
 			this.saldo += valorCredito;
 		}
 
-		@Override
-		public String toString() {
-			return "ContaBancaria [nomeCliente: " + nomeCliente + ", numConta: " + numConta + ", saldo: " + saldo + "]";
-		}
+		
+		
+		
+		
+		
+
 
 	
 }

@@ -15,10 +15,14 @@ public class ContaPoupanca extends ContaBancaria {
 	public ContaPoupanca() {
 	}
 	
-	//sobrecarga do contrutor
-	public ContaPoupanca(int mesAniversario) {
+	//construtor
+	public ContaPoupanca(String nomeCliente, int numConta, double juros, double correcaoMonetaria, int mesAniversario) {
+		super(nomeCliente, numConta);
+		this.juros = juros;
+		this.correcaoMonetaria = correcaoMonetaria;
 		this.mesAniversario = mesAniversario;
 	}
+	
 
 	//métodods getters and setters
 	public double getJuros() {
@@ -48,11 +52,15 @@ public class ContaPoupanca extends ContaBancaria {
 	
 	//método criado
 	public void aniversarioMes() {
-		
+				
 		Calendar mes = Calendar.getInstance();
 		
+		double porcentagemJuros = (this.juros * super.getSaldo());
+		
+		super.debite(super.getSaldo() - porcentagemJuros);
+		
 		if (this.mesAniversario == mes.get(Calendar.MONTH)) {
-			  
+			 super.credite(super.getSaldo() + (super.getSaldo() * this.correcaoMonetaria));
 		}
 	}
 	
