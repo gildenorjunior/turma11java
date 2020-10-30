@@ -54,6 +54,11 @@ public abstract class ContaBancaria {
 		void credite(double valorCredito) {
 			this.saldo += valorCredito;
 		}
+		
+		//método extrato
+		void extrato() {
+			
+		}
 
 		
 		

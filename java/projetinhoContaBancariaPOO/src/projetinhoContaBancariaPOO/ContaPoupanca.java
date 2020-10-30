@@ -7,7 +7,7 @@ public class ContaPoupanca extends ContaBancaria {
 	
 	//atributos
 	private double juros;
-	private double correcaoMonetaria;
+	private double correcaoMonetaria = 0.2;
 	private int mesAniversario;
 	
 	
@@ -54,14 +54,15 @@ public class ContaPoupanca extends ContaBancaria {
 	public void aniversarioMes() {
 				
 		Calendar mes = Calendar.getInstance();
+		//mes.get(Calendar.MONTH)
 		
-		double porcentagemJuros = (this.juros * super.getSaldo());
-		
-		super.debite(super.getSaldo() - porcentagemJuros);
-		
-		if (this.mesAniversario == mes.get(Calendar.MONTH)) {
-			 super.credite(super.getSaldo() + (super.getSaldo() * this.correcaoMonetaria));
+		if (this.mesAniversario == 10) {
+			super.credite(super.getSaldo() + (super.getSaldo() * 0.2));
 		}
+		
+		
+		
+		
 	}
 	
 	

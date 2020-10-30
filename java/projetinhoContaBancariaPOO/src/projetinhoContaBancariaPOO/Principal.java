@@ -14,6 +14,7 @@ public class Principal {
 		ContaPoupanca contaPoupanca = new ContaPoupanca();
 		ContaEmpresa contaEmpresa = new ContaEmpresa();
 		ContaEspecial contaEspecial = new ContaEspecial();
+		
 
 		System.out.println("════════════════════════════════════════════════");
 		System.out.println("═══════════════ BANCO GENERATION ═══════════════");
@@ -70,9 +71,6 @@ public class Principal {
 		}
 		case 2: { // conta poupança
 
-			contaPoupanca.setJuros(0.02);
-			contaPoupanca.setCorrecaoMonetaria(0.2);
-
 			System.out.print("\nDigite seu nome: ");
 			contaPoupanca.setNomeCliente(leia.next());
 
@@ -81,7 +79,8 @@ public class Principal {
 
 			System.out.print("Por favor, digite o mês do seu aniversário: ");
 			contaPoupanca.setMesAniversario(leia.nextInt());
-
+			contaPoupanca.aniversarioMes(); 
+			
 			do {
 
 				System.out.println("\nVocê está na conta Poupança, o que você deseja fazer: ");
@@ -98,10 +97,10 @@ public class Principal {
 					valorDebito = leia.nextDouble();
 					contaPoupanca.debite(valorDebito);
 				} else if (escolhaAcoesConta == 3) {
-					System.out.print("Seu saldo é de: " + contaCorrente.getSaldo());
+					System.out.print("Seu saldo é de: " + contaPoupanca.getSaldo());
 				}
 
-				//contaPoupanca.aniversarioMes(); // verificar o método debite da conta bancaria
+				
 
 				System.out.println("\nDeseja ver novamente o menu de opções para Conta Poupanca [S/N]: ");
 				condicaoParada = leia.next().toUpperCase().charAt(0);
