@@ -8,10 +8,10 @@
 		<version>2.3.5.RELEASE</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.primeiraatividade</groupId>
-	<artifactId>primeiraatividade</artifactId>
+	<groupId>com.hellowworld</groupId>
+	<artifactId>hello</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>primeiraatividade</name>
+	<name>hello</name>
 	<description>Demo project for Spring Boot</description>
 
 	<properties>
