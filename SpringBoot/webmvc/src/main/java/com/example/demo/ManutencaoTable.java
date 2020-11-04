@@ -1,18 +1,16 @@
 package com.example.demo;
 
 import javax.persistence.Id;
-import javax.annotation.Generated;
+import java.sql.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Table;
-import org.hibernate.type.DateType;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.sun.istack.NotNull;
 
 //cria a tabela
-
 @Entity
 @Table(name = "tb_manutencao") //definindo o nome da tabela para não ser automatico
 public class ManutencaoTable {
@@ -29,10 +27,13 @@ public class ManutencaoTable {
 	
 	@Column
 	@JsonFormat(pattern="yyyy-mm-dd") //formatando a data
-	private DateType data;
+	private Date data;
 	
 	@Column
 	private boolean pago;
+	
+	@Column
+	private String categoria;
 	
 	
 	//métodos getters and setters
@@ -52,11 +53,11 @@ public class ManutencaoTable {
 		this.nome = nome;
 	}
 
-	public DateType getData() {
+	public Date getData() {
 		return data;
 	}
 
-	public void setData(DateType data) {
+	public void setData(Date data) {
 		this.data = data;
 	}
 
@@ -66,6 +67,14 @@ public class ManutencaoTable {
 
 	public void setPago(boolean pago) {
 		this.pago = pago;
+	}
+
+	public String getCategoria() {
+		return categoria;
+	}
+
+	public void setCategoria(String categoria) {
+		this.categoria = categoria;
 	}
 	
 	
