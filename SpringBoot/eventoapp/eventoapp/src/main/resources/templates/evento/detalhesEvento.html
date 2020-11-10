@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+<meta charset="utf-8">
+<title>Eventos App</title>
+
+<!--Import Google Icon Font-->
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+      <!--Import materialize.css-->
+      <link type="text/css" rel="stylesheet" href="materialize/css/materialize.min.css"  media="screen,projection"/>
+
+      <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+</head>
+<body>
+
+	<h2>Evento</h2>
+	<h3><a href="/eventos" class="waves-effect red darken-4 btn"><i class="material-icons left">format_list_bulleted</i>Lista de Eventos</a></h3>
+	
+	<div th:each="evento: ${evento}" class="container">
+	
+		<div class="row">
+			<p><strong>Nome do evento: </strong><span th:text="${evento.nome}"></span></p>
+			<p><strong>Local: </strong><span th:text="${evento.local}"></span></p>
+			<p><strong>Data: </strong><span th:text="${evento.data}"></span></p>
+			<p><strong>Horário: </strong><span th:text="${evento.horario}"></span></p>		
+		</div>
+	
+		<th:block th:include="mensagemValidacao"></th:block>
+	
+		<form method="post">
+			<strong>Nome convidado:</strong> <input type="text" value="" name="nomeConvidado" placeholder="Nome Completo"/>
+			<strong>Rg: </strong><input type="text" value="" name="rg" placeholder="00.000.000.0" class="validate"/>
+			<button class="waves-effect red darken-4 btn" type="submit">Adicionar</button>
+		</form>
+	</div>
+	
+	<h5>Lista Convidados: </h5>
+	<div class="container" th:each="convidado : ${convidados}">
+		<div class="row">
+			<div class="input-field col s6">
+				<p><span th:text="${convidado.nomeConvidado}"></span></p>
+			</div>
+			<div class="input-field col s3">
+				<p><span th:text="${convidado.rg}"></span></p>
+			</div>
+		</div>
+	</div>
+
+
+	<!--JavaScript at end of body for optimized loading-->
+      <script type="text/javascript" src="materialize/js/materialize.min.js"></script>
+
+</body>
+</html>

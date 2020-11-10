@@ -1,7 +1,9 @@
 package com.example.demo;
 
 import javax.persistence.Id;
-import java.sql.Date;
+
+import java.util.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -12,7 +14,7 @@ import com.sun.istack.NotNull;
 
 //cria a tabela
 @Entity
-@Table(name = "tb_manutencao") //definindo o nome da tabela para não ser automatico
+@Table(name = "tb_manutencao_crud") //definindo o nome da tabela para não ser automatico
 public class ManutencaoTable {
 
 	
@@ -30,7 +32,8 @@ public class ManutencaoTable {
 	private Date data;
 	
 	@Column
-	private boolean pago;
+	//private boolean pago;
+	private String pago;
 	
 	@Column
 	private String categoria;
@@ -61,16 +64,25 @@ public class ManutencaoTable {
 		this.data = data;
 	}
 
-	public boolean isPago() {
-		return pago;
-	}
-
-	public void setPago(boolean pago) {
-		this.pago = pago;
-	}
+//	public boolean isPago() {
+//		return pago;
+//	}
+//
+//	public void setPago(boolean pago) {
+//		this.pago = pago;
+//	}
+	
 
 	public String getCategoria() {
 		return categoria;
+	}
+
+	public String getPago() {
+		return pago;
+	}
+
+	public void setPago(String pago) {
+		this.pago = pago;
 	}
 
 	public void setCategoria(String categoria) {

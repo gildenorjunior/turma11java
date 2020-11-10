@@ -16,7 +16,7 @@ import com.devmedia.mvc.agenda.repository.LivroRepository;
 @RequestMapping("/")
 public class LivroController {
 
-	
+	//INSTÂNCIANDO O OBJETO "livroRepository" da Classe LivroRepository já criada para embaixo criar o método
 	private LivroRepository livroRepository;
 	
 	@Autowired
@@ -24,6 +24,8 @@ public class LivroController {
 		this.livroRepository = livroRepository;
 	}
 	
+	
+	//LISTA OS LIVROS DE UM DETERMINADO AUTOR E SERÁ ACESSADO QUANDO A REQUISIÇÃO FOR GET
 	@RequestMapping(value = "/{autor}", method = RequestMethod.GET)
 	public String listaLivros(@PathVariable("autor") String autor, Model model) {
 		List<LivroEntity> listaLivros = livroRepository.findByAutor(autor);
@@ -33,6 +35,7 @@ public class LivroController {
 		return "listaLivros";
 	}
 	
+	//ADICIONA LIVRO QUANDO A REQUISIÇÃO FOR POST
 	@RequestMapping(value = "/{autor}", method = RequestMethod.POST)
 	public String adicionalLivroAutor(@PathVariable("autor") String autor, LivroEntity livro) {
 		livro.setAutor(autor);

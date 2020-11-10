@@ -1,16 +1,42 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
+<meta charset="utf-8">
 <title>Lista</title>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<script src="controller.js"></script>
 </head>
 <body>
 
-Est� � a lista
-<hr>
-<a href="index.html">Home</a> |
-<a href="lista.html">Lista</a> |
-<a href="inserir.html">Inserir</a>
+	Está é a lista
+	<hr>
+	<a href="index.html">Home</a> |
+	<a href="lista.html">Lista</a> |
+	<a href="inserir.html">Inserir</a> |
+	<a href="atualizar.html">Atualizar</a>
+
+
+	<div ng-app="myApp" ng-controller="myCtrl">
+	<table border = "1">
+		<tr>
+			<th>Id</th>
+			<th>Nome</th>
+			<th>Data</th>
+			<th>Categoria</th>
+			<th>Pago</th>
+			<th>Ações</th>
+		</tr>
+		
+		<tr ng-repeat="manutencao in manutencoes">
+			<td>{{manutencao.id}}</td>
+			<td>{{manutencao.nome}}</td>
+			<td>{{manutencao.data}}</td>
+			<td>{{manutencao.categoria}}</td>
+			<td>{{manutencao.pago}}</td>
+			<td><a href="#">Editar</a> | <a href="#">Excluir</a></td>
+		</tr>
+	</table>
+	</div>
 
 </body>
 </html>

@@ -1,16 +1,41 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
+<meta charset="utf-8">
 <title>Inserir</title>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<script src="controller.js"></script>
 </head>
 <body>
 
-Est� � a inserir
+Está é a inserir
 <hr>
 <a href="index.html">Home</a> |
 <a href="lista.html">Lista</a> |
-<a href="inserir.html">Inserir</a>
+<a href="inserir.html">Inserir</a> |
+<a href="atualizar.html">Atualizar</a>
+
+<div ng-app="myApp" ng-controller="myCtrl">
+		<form>
+			<br>		
+			<strong>Id:</strong><br><input type="number" ng-model="id" readonly><br><br>	<!--  NGMODEL É DO ANGULAR -->
+			
+			<strong>Nome:</strong><br><input type="text" ng-model="nome" size="20" placeholder="Digite o serviço"><br><br>
+			
+			<strong>Categoria:</strong><br><input type="text" ng-model="categoria" size="20" placeholder="Digite a categoria"><br><br>
+			
+			<strong>Data:</strong><br><input type="date" ng-model="data" required><br><br>
+			
+			<strong>Status:</strong> </br>			
+			<select ng-model="pago" >
+				<option>Pago</option>
+				<option>Não Pago</option>
+			</select></br></br>
+			
+			
+			<button ng-click="salvar()">Salvar</button>
+		</form>
+	</div>
 
 </body>
 </html>

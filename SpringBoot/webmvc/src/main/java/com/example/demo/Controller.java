@@ -3,6 +3,8 @@ package com.example.demo;
 import java.util.Optional;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -14,7 +16,6 @@ import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 
-
 @RestController
 public class Controller implements WebMvcConfigurer { //o Web ele vai habilitar o roteamento de endereços
  
@@ -23,9 +24,21 @@ public class Controller implements WebMvcConfigurer { //o Web ele vai habilitar 
 		index.addViewController("/").setViewName("forward:/index.html");
 	}
 	
+	//fazendo uma injeção da interface ManutencaoRepository
 	@Autowired
 	private ManutencaoRepository repository; //instanciando o objeto repository
 	
+	@Autowired
+	private Services service;
+	
+	@GetMapping("/teste")
+    public ResponseEntity<List<ManutencaoTable>> listAllItens() {
+        List<ManutencaoTable> itens= service.findAllItens();
+        if(itens.isEmpty()){
+            return new ResponseEntity<List<ManutencaoTable>>(HttpStatus.NO_CONTENT);//You many decide to return HttpStatus.NOT_FOUND
+        }
+        return new ResponseEntity<List<ManutencaoTable>>(itens, HttpStatus.ACCEPTED);
+    }
 	
 	//QUATRO MÉTODOS, GET, POST, PUT E DELETE
 	//GETBYID, GETBYNOME
@@ -35,11 +48,21 @@ public class Controller implements WebMvcConfigurer { //o Web ele vai habilitar 
 		return repository.findAll();
 	}
 	
-	//request body pegar o que esta no corpo inserir 
-	@GetMapping("/manutencoes/{id}") //é igual select id where 
-	public Optional<ManutencaoTable> buscarUm(@PathVariable Long id) {//PATH VARIABLE É UMA NOTAÇÃO UTILIZADA PARA PASSAR UM ID ou qualquer outro parametro
-		return repository.findById(id); //procura por id 
-	}
+	//
+	
+	//dessa forma quando não tiver id no postman vai retornar null
+	//deste jeito nao retornar erro
+//	@GetMapping("/manutencoes/id/{id}")
+//	public Optional<ManutencaoTable> buscarUm(@PathVariable Long id) {
+//		return repository.findById(id);
+//	}
+		
+		//dessa forma quando não tiver id vai retornar not found
+		@GetMapping("/manutencoes/id/{id}")
+		public ResponseEntity<ManutencaoTable> getById(@PathVariable long id){
+			return repository.findById(id).map(resp -> ResponseEntity.ok(resp))
+					.orElse(ResponseEntity.notFound().build());
+		}
 	
 	//post == inserir
 	//localhost:8080/manutencoes
@@ -52,7 +75,7 @@ public class Controller implements WebMvcConfigurer { //o Web ele vai habilitar 
 	
 	//put é atualizar
 	@PutMapping("/manutencoes/{id}")
-	public ManutencaoTable atualizar(@PathVariable Long id, @RequestBody ManutencaoTable objetinho) {
+	public ManutencaoTable put(@PathVariable Long id, @RequestBody ManutencaoTable objetinho) {
 		objetinho.setId(id);
 		repository.save(objetinho);
 		return objetinho;
@@ -72,6 +95,9 @@ public class Controller implements WebMvcConfigurer { //o Web ele vai habilitar 
 	public void delete(@PathVariable Long id) {
 		repository.deleteById(id);
 	}
+	
+	
+
 	
 	
 }

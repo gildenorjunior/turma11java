@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Delete</title>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<script src="controller.js"></script>
+</head>
+<body>
+
+	Está é a deletar
+
+	<hr>
+	<a href="index.html">Home</a> |
+	<a href="lista.html">Lista</a> |
+	<a href="inserir.html">Inserir</a> |
+	<a href="atualizar.html">Atualizar</a>
+	<a href="delete.html">Deletar</a>
+
+	<div ng-app="myApp" ng-controller="myCtrl">
+
+		<br> <strong>Id:</strong><br> <input type="number"
+			ng-model="id"><br> <br>
+
+		<table border="1">
+
+			<tr>
+				<th>Id</th>
+				<th>Nome</th>
+				<th>Data</th>
+				<th>Categoria</th>
+				<th>Pago</th>
+				<th>Ações</th>
+			</tr>
+
+			<tr ng-repeat="manutencao in manutencoes">
+				<td>{{manutencao.id}}</td>
+				<td>{{manutencao.nome}}</td>
+				<td>{{manutencao.data}}</td>
+				<td>{{manutencao.categoria}}</td>
+				<td>{{manutencao.pago}}</td>
+				<td>
+					<button ng-click="delete()">Deletar</button> |
+					<button onclick="location.href='delete.html'">Refresh</button>
+				</td>
+			</tr>
+
+		</table>
+
+	</div>
+
+</body>
+</html>

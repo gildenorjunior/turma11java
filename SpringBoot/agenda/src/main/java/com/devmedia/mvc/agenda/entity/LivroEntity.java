@@ -9,6 +9,8 @@ import javax.persistence.Id;
 @Entity
 public class LivroEntity {
 
+	//USANDO O BANCO DE DADOS H2 O BANCO SERÁ CRIADO ASSIM QUE EXECUTAR A APLICAÇÃO SEM NECESSIDADE DE CONFIGURAÇÃO ADICIONAL
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
